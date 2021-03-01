@@ -169,28 +169,3 @@
 | gams                 | git am --skip                                                                                                                    |
 | gama                 | git am --abort                                                                                                                   |
 | gamscp               | git am --show-current-patch                                                                                                      |
-
-### Main branch preference
-
-Following the recent push for removing racially-charged words from our technical vocabulary, the git plugin favors using
-a branch name other than `master`. In this case, we favor the shorter, neutral and descriptive term `main`. This means
-that any aliases and functions that previously used `master`, will use `main` if that branch exists. We do this via the
-function `git_main_branch`.
-
-### Deprecated aliases
-
-These are aliases that have been removed, renamed, or otherwise modified in a way that may, or may not, receive further support.
-
-| Alias  | Command                                                | Modification                                           |
-| :----- | :----------------------------------------------------- | :----------------------------------------------------- |
-| gap    | `git add --patch`                                      | new alias `gapa`                                       |
-| gcl    | `git config --list`                                    | new alias `gcf`                                        |
-| gdc    | `git diff --cached`                                    | new alias `gdca`                                       |
-| gdt    | `git difftool`                                         | no replacement                                         |
-| ggpull | `git pull origin $(current_branch)`                    | new alias `ggl` (`ggpull` still exists for now though) |
-| ggpur  | `git pull --rebase origin $(current_branch)`           | new alias `ggu` (`ggpur` still exists for now though)  |
-| ggpush | `git push origin $(current_branch)`                    | new alias `ggp` (`ggpush` still exists for now though) |
-| gk     | `gitk --all --branches`                                | now aliased to `gitk --all --branches`                 |
-| glg    | `git log --stat --max-count = 10`                      | now aliased to `git log --stat --color`                |
-| glgg   | `git log --graph --max-count = 10`                     | now aliased to `git log --graph --color`               |
-| gwc    | `git whatchanged -p --abbrev-commit --pretty = medium` | new alias `gwch`                                       |
