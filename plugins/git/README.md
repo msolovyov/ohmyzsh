@@ -1,13 +1,3 @@
-# git plugin
-
-The git plugin provides many [aliases](#aliases) and a few useful [functions](#functions).
-
-To use it, add `git` to the plugins array in your zshrc file:
-
-```zsh
-plugins=(... git)
-```
-
 ## Aliases
 
 | Alias                | Command                                                                                                                          |
@@ -204,31 +194,3 @@ These are aliases that have been removed, renamed, or otherwise modified in a wa
 | glg    | `git log --stat --max-count = 10`                      | now aliased to `git log --stat --color`                |
 | glgg   | `git log --graph --max-count = 10`                     | now aliased to `git log --graph --color`               |
 | gwc    | `git whatchanged -p --abbrev-commit --pretty = medium` | new alias `gwch`                                       |
-
-## Functions
-
-### Current
-
-| Command                | Description                                                                  |
-|:-----------------------|:-----------------------------------------------------------------------------|
-| `grename <old> <new>`  | Rename `old` branch to `new`, including in origin remote                     |
-| current_branch         | Return the name of the current branch                                        |
-| git_current_user_name  | Returns the `user.name` config value                                         |
-| git_current_user_email | Returns the `user.email` config value                                        |
-| git_main_branch        | Returns the name of the main branch: `main` if it exists, `master` otherwise |
-
-### Work in Progress (WIP)
-
-These features allow to pause a branch development and switch to another one (_"Work in Progress"_,  or wip). When you want to go back to work, just unwip it.
-
-| Command          | Description                                     |
-|:-----------------|:------------------------------------------------|
-| work_in_progress | Echoes a warning if the current branch is a wip |
-| gwip             | Commit wip branch                               |
-| gunwip           | Uncommit wip branch                             |
-
-### Deprecated functions
-
-| Command                | Description                             | Reason                                                          |
-|:-----------------------|:----------------------------------------|:----------------------------------------------------------------|
-| current_repository     | Return the names of the current remotes | Didn't work properly. Use `git remote -v` instead (`grv` alias) |
